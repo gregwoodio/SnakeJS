@@ -269,8 +269,8 @@ $(document).ready(function() {
 
 		ctx.fillStyle = "black";
 		ctx.font = "30px Arial";
-		ctx.fillText("Press R to play again", 215, 250);
-		ctx.fillText("or S to submit your score", 185, 300);
+		ctx.fillText("Press R to play again", 275, 200);
+		ctx.fillText("or S to submit your score", 255, 270);
 	}
 
 	//movement
