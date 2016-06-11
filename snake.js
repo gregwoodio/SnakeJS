@@ -87,6 +87,7 @@ $(document).ready(function() {
 	    	//restart game
 	    	setupBoard();
 	    	drawBoard();
+	    	clearInterval(gameTimer);
 	    	gameTimer = setInterval(function() {
 				switch (currentDir) {
 					case UP:
