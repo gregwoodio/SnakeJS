@@ -52,7 +52,7 @@ $(document).ready(function() {
 
 	//keyboard controls 
 	document.addEventListener('keydown', function(event) {
-	    if (event.keyCode == 37 == event.keyCode == 65) {
+	    if (event.keyCode == 37 || event.keyCode == 65) {
 	        //moveLeft();
 	        if (currentDir != RIGHT && canTurn) {
 	        	currentDir = LEFT;
@@ -81,6 +81,28 @@ $(document).ready(function() {
 	        	currentDir = DOWN;
 	        	canTurn = false;
 	        }
+	    }
+
+	    else if (event.keyCode == 82) {
+	    	//restart game
+	    	setupBoard();
+	    	drawBoard();
+	    	gameTimer = setInterval(function() {
+				switch (currentDir) {
+					case UP:
+						moveUp();
+						break;
+					case DOWN:
+						moveDown();
+						break;
+					case LEFT:
+						moveLeft();
+						break;
+					case RIGHT:
+						moveRight();
+						break;
+				}
+			}, speed);
 	    }
 	});
 
@@ -235,6 +257,11 @@ $(document).ready(function() {
 
 		alert("Game over!\nYou scored: " + score);
 		clearTimeout(gameTimer);
+
+		ctx.fillStyle = "black";
+		ctx.font = "30px Arial";
+		ctx.fillText("Press R to play again", 215, 250);
+		ctx.fillText("or S to submit your score", 185, 300);
 	}
 
 	//movement
