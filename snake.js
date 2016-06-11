@@ -242,7 +242,6 @@ $(document).ready(function() {
 				board[portal2[0]][portal2[1]] == 0;
 			}	
 		}
-		
 
 		var x = 0;
 		var y = 0;
@@ -272,6 +271,7 @@ $(document).ready(function() {
 
 		//alert("Game over!\nYou scored: " + score);
 		clearTimeout(gameTimer);
+		clearTimeout(superAppleTimer);
 	}
 
 	//movement
