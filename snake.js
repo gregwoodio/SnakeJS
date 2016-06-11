@@ -262,44 +262,37 @@ $(document).ready(function() {
 	}
 
 	function gameOver() {
-		//stop timers
-
-		//alert("Game over!\nYou scored: " + score);
-		clearTimeout(gameTimer);
 
 		ctx.fillStyle = "black";
 		ctx.font = "30px Arial";
 		ctx.fillText("Press R to play again", 275, 200);
 		ctx.fillText("or S to submit your score", 255, 270);
+
+		//stop timers
+
+		//alert("Game over!\nYou scored: " + score);
+		clearTimeout(gameTimer);
 	}
 
 	//movement
 	function moveUp() {
 		snakeY--;
 		move();	
-		currentDir = UP;
-		drawBoard();
 	}
 
 	function moveDown() {
 		snakeY++;
 		move();
-		currentDir = DOWN;
-		drawBoard();
 	}
 
 	function moveRight() {
 		snakeX++;
 		move();
-		currentDir = RIGHT;
-		drawBoard();
 	}
 
 	function moveLeft() {
 		snakeX--;
 		move();
-		currentDir = LEFT;
-		drawBoard();
 	}
 
 	function move() {
@@ -312,12 +305,15 @@ $(document).ready(function() {
 		} else if (board[snakeX][snakeY] == 0) {
 			//open space
 			tail(snakeX, snakeY);
+			drawBoard();
 		} else if (board[snakeX][snakeY] == 2) {
 			//apple
 			eatApple(snakeX, snakeY);
+			drawBoard();
 		} else if (board[snakeX][snakeY] == 3) {
 			//super apple
 			eatSuperApple(snakeX, snakeY);
+			drawBoard();
 		} else if (board[snakeX][snakeY] == 4) {
 			//time for some portals
 			if (snakeX == portal1[0] && snakeY == portal1[1]) {
@@ -340,6 +336,7 @@ $(document).ready(function() {
 				tail(portal1[0], portal1[1]);
 			}
 			makePortals();
+			drawBoard();
 		}
 		canTurn = true;
 	}
