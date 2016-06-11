@@ -107,6 +107,7 @@ $(document).ready(function() {
 	});
 
 	function setupBoard() {
+		board = [];
 		for (i = 0; i < width; i++) {
 			board.push([]);
 			for (j = 0; j < height; j++) {
@@ -115,6 +116,8 @@ $(document).ready(function() {
 		}
 
 		//start at board[30][10];
+		snakeX = 10;
+		snakeY = 30;
 		board[snakeX][snakeY] = 1;
 		board[snakeX-1][snakeY] = 1;
 		board[snakeX-2][snakeY] = 1;
