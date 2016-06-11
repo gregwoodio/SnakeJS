@@ -125,6 +125,7 @@ $(document).ready(function() {
 		board[snakeX][snakeY] = 1;
 		board[snakeX-1][snakeY] = 1;
 		board[snakeX-2][snakeY] = 1;
+		currentDir = RIGHT;
 
 		snakePox = [];
 		snakePos.push([snakeX, snakeY]);
@@ -264,7 +265,7 @@ $(document).ready(function() {
 	function gameOver() {
 		//stop timers
 
-		alert("Game over!\nYou scored: " + score);
+		//alert("Game over!\nYou scored: " + score);
 		clearTimeout(gameTimer);
 
 		ctx.fillStyle = "black";
