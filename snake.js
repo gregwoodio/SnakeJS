@@ -127,7 +127,7 @@ $(document).ready(function() {
 		board[snakeX-2][snakeY] = 1;
 		currentDir = RIGHT;
 
-		snakePox = [];
+		snakePos = [];
 		snakePos.push([snakeX, snakeY]);
 		snakePos.push([snakeX-1, snakeY]);
 		snakePos.push([snakeX-2, snakeY]);
@@ -232,7 +232,6 @@ $(document).ready(function() {
 	}
 
 	function makePortals() {
-		console.log("makePortals");
 		
 		if (portal1 != undefined && portal2 != undefined) {
 			if (snakeX == portal1[0] && snakeY == portal1[1]) {
@@ -353,6 +352,32 @@ $(document).ready(function() {
 			}
 		}
 		return false;
+	}
+
+	//hi score table functions
+	function showScores() {
+		$.ajax({
+			url: "getscore.php",
+			type: "POST",
+			dataType: "html",
+			success: function(data) {
+				$("#hiscorestable").html(data);
+			}
+		});
+	}
+
+	function submitScore() {
+		var username = prompt("Enter your name:");
+		username = username.replace(/[^a-zA-Z0-9 ]/g, "");
+
+		$.ajax({
+			url: "logscore.php",
+			type: "POST",
+			data: {"username": username, "score": score},
+			success: function() {
+				showScores();
+			}
+		});	
 	}
 
 	setupBoard();

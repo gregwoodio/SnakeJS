@@ -5,9 +5,19 @@ body {
 }
 
 .container {
-	width: 800px;
+	width: 1200px;
 	margin-right: auto;
 	margin-left: auto;
+}
+
+.gamearea {
+	width:800px;
+}
+
+#hiscoretable {
+	width: 400px;
+	display: inline-block;
+	vertical-align: top;
 }
 
 canvas {
