@@ -52,7 +52,10 @@ $(document).ready(function() {
 
 	//keyboard controls 
 	document.addEventListener('keydown', function(event) {
-	    if (event.keyCode == 37 || event.keyCode == 65) {
+
+		if (event.keyCode == 83 && gameTimer == undefined) {
+			submitScore();
+		} else if (event.keyCode == 37 || event.keyCode == 65) {
 	        //moveLeft();
 	        if (currentDir != RIGHT && canTurn) {
 	        	currentDir = LEFT;
@@ -136,6 +139,9 @@ $(document).ready(function() {
 		addApple();
 		addSuperApple();
 		makePortals();
+
+		//fill hi score table
+		showScores();
 	}
 
 	function drawBoard() {
@@ -271,6 +277,7 @@ $(document).ready(function() {
 
 		//alert("Game over!\nYou scored: " + score);
 		clearTimeout(gameTimer);
+		gameTimer = undefined;
 		clearTimeout(superAppleTimer);
 	}
 
