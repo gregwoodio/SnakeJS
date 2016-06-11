@@ -15,7 +15,8 @@ body {
 }
 
 #hiscoretable {
-	width: 400px;
+	width: 350px;
+	margin-left: 20px;
 	display: inline-block;
 	vertical-align: top;
 }
