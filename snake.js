@@ -87,7 +87,10 @@ $(document).ready(function() {
 	    	//restart game
 	    	setupBoard();
 	    	drawBoard();
+	    	
 	    	clearInterval(gameTimer);
+	    	clearInterval(superAppleTimer);
+
 	    	gameTimer = setInterval(function() {
 				switch (currentDir) {
 					case UP:
@@ -122,6 +125,8 @@ $(document).ready(function() {
 		board[snakeX][snakeY] = 1;
 		board[snakeX-1][snakeY] = 1;
 		board[snakeX-2][snakeY] = 1;
+
+		snakePox = [];
 		snakePos.push([snakeX, snakeY]);
 		snakePos.push([snakeX-1, snakeY]);
 		snakePos.push([snakeX-2, snakeY]);
