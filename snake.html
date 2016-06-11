@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Snake</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="./snake.css" />
+		<script type="text/javascript" src="//code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	</head>
+
+	<body>
+		<div class="container">
+			<h1>Snake</h1>
+			<h3>Score: <span id="score">0</span></h3>
+			<canvas id="canvas" height="480" width="800">Your browser doesn't support canvas. :(</canvas>
+			<h3>How to play:</h3>
+			Use the arrow keys (or WASD) to move your snake around the area. Eat apples to get points, but don't crash into the walls or yourself.
+			<ul>
+				<li><strong>Red squares:</strong> Red squares are apples. They give you one point and make the snake longer.</li>
+				<li><strong>Yellow squares:</strong> Yellow squares are super apples, they give you five points and make the snake longer, but only stay in one spot for a short time.</li>
+				<li><strong>Orange and Blue squares:</strong> Portals! Go in one side and come out the other. Be careful, you keep going the same direction so don't go into the portal too close to a wall.</li>
+			</ul>
+		</div>
+		
+		<script type="text/javascript" src="./snake.js"></script>
+	</body>
+</html>

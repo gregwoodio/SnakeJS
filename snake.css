@@ -1,0 +1,15 @@
+body {
+	background: lightblue;
+	/*background-image: url('./wall.jpg');*/
+	background-repeat: repeat;
+}
+
+.container {
+	width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+canvas {
+	border: 1px solid black;
+}
